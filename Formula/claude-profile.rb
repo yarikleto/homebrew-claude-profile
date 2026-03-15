@@ -1,8 +1,8 @@
 class ClaudeProfile < Formula
   desc "Switch between Claude Code configuration profiles"
   homepage "https://github.com/yarikleto/claude-profile"
-  url "https://github.com/yarikleto/claude-profile/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "315c182024e02e0f947ea08933cb8897e9aa6b63bd71822ce5109609c12d0173"
+  url "https://github.com/yarikleto/claude-profile/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "36c7aa230446b043a0a776794002d07bb873d7e518192605ebb176d1b18f2250"
   license "MIT"
 
   depends_on "bash"
