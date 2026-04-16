@@ -1,22 +1,22 @@
 class ClaudeProfile < Formula
   desc "Switch between Claude Code configuration profiles"
-  homepage "https://github.com/yarikleto/claude-project-profile"
-  url "https://github.com/yarikleto/claude-project-profile/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "060bd1107171fc545921dc7451a9c758db8ba3104bac100a3f7b498bc01555a5"
+  homepage "https://github.com/yarikleto/claude-profile"
+  url "https://github.com/yarikleto/claude-profile/archive/refs/tags/v2.0.2.tar.gz"
+  sha256 "cab39ec1eeea6280bed36f3ac8f0a1c83f0fbed237efddc01e33660277372f3c"
   license "MIT"
 
   depends_on "bash"
 
   def install
     libexec.install "lib", "commands"
-    bin.install "claude-project-profile"
-    inreplace bin/"claude-project-profile",
+    bin.install "claude-profile"
+    inreplace bin/"claude-profile",
       /^SCRIPT_DIR=.*/, "SCRIPT_DIR=\"#{libexec}\""
-    zsh_completion.install "completions/_claude-project-profile"
-    bash_completion.install "completions/claude-project-profile.bash" => "claude-project-profile"
+    zsh_completion.install "completions/claude-profile.zsh" => "_claude-profile"
+    bash_completion.install "completions/claude-profile.bash" => "claude-profile"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/claude-project-profile version")
+    assert_match version.to_s, shell_output("#{bin}/claude-profile version")
   end
 end
